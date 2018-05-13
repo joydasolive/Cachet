@@ -11,15 +11,31 @@
 
 return [
 
-    'dashboard' => '儀表板',
+    'dashboard'          => '儀表板',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
         'title'                    => '事件與排程',
         'incidents'                => '事件',
-        'logged'                   => '{0} 做得好，沒有任何事件。|你記錄了一個事件。|你回報了 <strong>:count</strong> 個事件。',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => '新增模板',
         'incident-templates'       => '事件模板',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'add'     => [
+                'title'   => 'Create new incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => '添加事件',
             'success' => 'Incident added.',
@@ -59,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => '排程維護',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => '排程於 :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
@@ -86,12 +102,12 @@ return [
             'title'   => '添加組件',
             'message' => '你應該先新增一個組件。',
             'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => '編輯組件',
             'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
@@ -140,13 +156,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => '訂閱者',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => '已認證',
-        'not_verified'     => '未認證',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
-        'add'              => [
+        'subscribers'          => '訂閱者',
+        'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => '已認證',
+        'not_verified'         => '未認證',
+        'subscriber'           => ':email, subscribed :date',
+        'no_subscriptions'     => 'Subscribed to all updates',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => '添加訂閱者',
             'success' => '訂閱者已添加成功.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
@@ -197,6 +215,9 @@ return [
         'analytics' => [
             'analytics' => '第三方統計',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => '國際化',
         ],
@@ -204,6 +225,14 @@ return [
             'customization' => 'Customization',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => '安全',
@@ -254,14 +283,14 @@ return [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
         'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page!',
+        'welcome' => 'Welcome to your new status page, :username!',
         'message' => '你的狀態頁快準備好了！不過你也許先想調整一下以下設定。',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
             'component'  => '新增組件',
             'incident'   => '新增事件',

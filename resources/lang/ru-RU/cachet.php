@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Последнее обновление :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Неизвестно',
             1 => 'Работает',
             2 => 'Падение производительности',
             3 => 'Перебои в работе',
@@ -27,15 +27,14 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Без происшествий',
-        'past'          => 'Последние инциденты',
-        'previous_week' => 'Предыдущая неделя',
-        'next_week'     => 'Следующая неделя',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Плановые работы',
-        'scheduled_at'  => ', запланированы :timestamp',
-        'posted'        => 'Отправлено :timestamp',
-        'status'        => [
+        'none'         => 'Без происшествий',
+        'past'         => 'Последние инциденты',
+        'stickied'     => 'Закрепленные инциденты',
+        'scheduled'    => 'Плановые работы',
+        'scheduled_at' => ', запланированы :timestamp',
+        'posted'       => 'Опубликовано :timestamp',
+        'posted_at'    => 'Опубликовано в :timestamp',
+        'status'       => [
             1 => 'Проводим анализ проблемы',
             2 => 'Причина определена',
             3 => 'Под наблюдением',
@@ -46,15 +45,15 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Будущие',
+            1 => 'Выполняется',
+            2 => 'Завершено',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Система работает исправно|[2,Inf] Все системы работают исправно',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] В системе есть неполадки|[2,Inf] В некоторых системах есть неполадки',
         'major' => '[0,1] Система не работает|[2,Inf] Некоторые системы не работают',
     ],
@@ -77,11 +76,12 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Подпишитесь, чтобы получать информацию об изменениях',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Отписаться от :link',
         'button'      => 'Подписаться',
         'manage'      => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',
             'my_subscriptions' => 'Вы подписаны на следующие изменения.',
+            'manage_at_link'   => 'Управляйте своими подписками в :link',
         ],
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
@@ -118,11 +118,20 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Главный экран',
-    'description'     => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
     'powered_by'      => 'Работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Время указано в :timezone.',
+    'timezone'        => 'Время показано по :timezone.',
     'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

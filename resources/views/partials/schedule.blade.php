@@ -5,9 +5,12 @@
         </div>
         <div class="list-group">
             @foreach($scheduled_maintenance as $schedule)
-            <div class="list-group-item">
+            <div class="list-group-item" id="scheduled-{{ $schedule->id }}">
                 <strong>{{ $schedule->name }}</strong> <small class="date"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></small>
-                {!! $schedule->formatted_message !!}
+                <div class="pull-right"><a href="#scheduled-{{ $schedule->id }}"><i class="ion ion-link"></i></a></div>
+                <div class="markdown-body">
+                    {!! $schedule->formatted_message !!}
+                </div>
                 @if($schedule->components->count() > 0)
                 <hr>
                 @foreach($schedule->components as $affected_component)

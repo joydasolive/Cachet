@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Poslední aktualizace :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Neznámý',
             1 => 'V provozu',
             2 => 'Problémy s výkonem',
             3 => 'Částečný výpadek',
@@ -27,15 +27,14 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nejsou nahlášeny žádné incidenty',
-        'past'          => 'Minulé incidenty',
-        'previous_week' => 'Předchozí týden',
-        'next_week'     => 'Příští týden',
-        'stickied'      => 'Připnuté incidenty',
-        'scheduled'     => 'Plánovaná odstávka',
-        'scheduled_at'  => ', plánované na :timestamp',
-        'posted'        => 'Publikováno :timestamp',
-        'status'        => [
+        'none'         => 'Nejsou nahlášeny žádné incidenty',
+        'past'         => 'Minulé incidenty',
+        'stickied'     => 'Připnuté incidenty',
+        'scheduled'    => 'Plánovaná odstávka',
+        'scheduled_at' => ', plánované na :timestamp',
+        'posted'       => 'Publikováno :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
+        'status'       => [
             1 => 'Zkoumání příčiny',
             2 => 'Problém identifikován',
             3 => 'Sledování',
@@ -46,15 +45,15 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Blížící se',
+            1 => 'Probíhající',
+            2 => 'Hotovo',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Služba je v provozu|[2,Inf] Všechny služby fungují bez problémů',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Služba má problémy|[2,Inf] Některá ze služeb má problémy',
         'major' => '[0,1] Služba má celkový výpadek|[2,Inf] Některé služby mají celkový výpadek',
     ],
@@ -77,11 +76,12 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Přihlásit se k odběru upozornění',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Odhlásit se na :link',
         'button'      => 'Přihlásit',
         'manage'      => [
             'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
             'my_subscriptions' => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Přihlásit se k zasílání upozornění e-mailem.',
@@ -118,9 +118,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Držte krok s nejnovějšími aktualizacemi od: app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Hlavní stránka',
-    'description'     => 'Držte krok s nejnovějšími aktualizacemi od: app.',
     'powered_by'      => 'Vytvořeno pomocí <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Časová zóna je :timezone.',
     'about_this_site' => 'O tomto webu',

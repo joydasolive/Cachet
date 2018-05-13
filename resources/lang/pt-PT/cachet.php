@@ -14,28 +14,27 @@ return [
     'components' => [
         'last_updated' => 'Ultima actualização :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconhecido',
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
             4 => 'Indisponibilidade total',
         ],
         'group' => [
-            'other' => 'Outros componentes',
+            'other' => 'Outros Componentes',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nenhum incidente reportado',
-        'past'          => 'Incidentes anteriores',
-        'previous_week' => 'Semana anterior',
-        'next_week'     => 'Próxima Semana',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Manutenção Agendada',
-        'scheduled_at'  => ', agendada :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'Nenhum incidente reportado',
+        'past'         => 'Incidentes anteriores',
+        'stickied'     => 'Incidentes Persistentes',
+        'scheduled'    => 'Manutenção Agendada',
+        'scheduled_at' => ', agendada :timestamp',
+        'posted'       => 'Publicado :timestamp',
+        'posted_at'    => 'Publicado em :timestamp',
+        'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -46,15 +45,15 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Brevemente',
+            1 => 'Em Progresso',
+            2 => 'Concluído',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistema operacional|[2,Inf] Todos os sistemas estão operacionais',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] O sistema encontra-se com alguns problemas|[2,Inf] Alguns sistemas estão com problemas',
         'major' => '[0,1] O serviço encontra-se com uma falha geral.|[2,Inf] Alguns sistemas encontram-se com falhas gerais',
     ],
@@ -77,11 +76,12 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Inscreva-se para obter as atualizações mais recentes',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Subscrição cancelada em :link',
         'button'      => 'Subscrever',
         'manage'      => [
             'no_subscriptions' => 'Actualmente está subscrito para todas as actualizações.',
             'my_subscriptions' => 'Actualmente está subscrito para as seguintes actualizações.',
+            'manage_at_link'   => 'Edite as suas subscrições aqui :link',
         ],
         'email' => [
             'subscribe'          => 'Subscrever actualizações via email.',
@@ -118,11 +118,20 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Mantenha-se actualizado relativamente às alterações de serviço do :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Início',
-    'description'     => 'Mantenha-se actualizado relativamente às alterações de serviço do :app.',
     'powered_by'      => 'Suportado por <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'timezone'        => 'Tempos são exibidos em :timezone.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
